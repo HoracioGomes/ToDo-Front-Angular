@@ -2,11 +2,12 @@
   <button class="novo-todo mat-elevation-z8" mat-stroked-button color="primary">
     Novo To-Do
   </button>
+  <div class="content" *ngFor="let todo of list">
   <mat-card class="mat-elevation-z8">
-    <p>Data para Finalizar</p>
+    <p>{{todo.dataParaFinalizar}}</p>
     <mat-card-header>
-      <mat-card-title>Shiba Inu</mat-card-title>
-      <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+      <mat-card-title>{{todo.titulo}}</mat-card-title>
+      <mat-card-subtitle>{{todo.descricao}}</mat-card-subtitle>
     </mat-card-header>
     <div class="actions">
       <button mat-mini-fab color="primary">
@@ -20,4 +21,5 @@
       </button>
     </div>
   </mat-card>
+</div>
 </div>
