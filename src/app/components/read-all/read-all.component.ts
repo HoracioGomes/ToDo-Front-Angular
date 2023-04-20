@@ -20,6 +20,15 @@ export class ReadAllComponent implements OnInit {
   findAll(): void {
     this.service.findAll().subscribe((response) => {
       this.list = response;
+      this.countClosed();
+    });
+  }
+
+  countClosed() {
+    this.list.forEach((todo) => {
+      if (todo.finalizado) {
+        this.closed++;
+      }
     });
   }
 }
