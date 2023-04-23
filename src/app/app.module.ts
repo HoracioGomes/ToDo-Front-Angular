@@ -3,6 +3,7 @@ import { BrowserModule } from "@angular/platform-browser";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
+import { FormsModule } from "@angular/forms";
 import { HeaderComponent } from "./components/header/header.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MatToolbarModule } from "@angular/material/toolbar";
@@ -14,13 +15,21 @@ import {MatIconModule} from '@angular/material/icon';
 import { HttpClientModule } from "@angular/common/http";
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { FinalizadosComponent } from './components/finalizados/finalizados.component';
+import { CreateComponent } from './components/create/create.component';
+import {MatInputModule} from '@angular/material/input';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from "@angular/material/core";
+import { UpdateComponent } from './components/update/update.component';
+
+
 
 
 
 
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, FooterComponent, ReadAllComponent],
+  declarations: [AppComponent, HeaderComponent, FooterComponent, ReadAllComponent, FinalizadosComponent, CreateComponent, UpdateComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -31,7 +40,11 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     MatIconModule,
     HttpClientModule,
     MatBadgeModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    FormsModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [],
   bootstrap: [AppComponent],

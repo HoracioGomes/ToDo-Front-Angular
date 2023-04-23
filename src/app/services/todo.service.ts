@@ -16,12 +16,27 @@ export class TodoService {
     return this.http.get<Todo[]>(this.baseUrl);
   }
 
+  update(todo: Todo): Observable<Todo> {
+    const urlToUpdate = `${this.baseUrl}${todo.id}`;
+    return this.http.put<Todo>(urlToUpdate, todo);
+  }
+
   delete(id: any): Observable<Boolean> {
     const urlToDelete = `${this.baseUrl}delete/${id}`;
     return this.http.delete<Boolean>(urlToDelete);
   }
 
-  message(message: String): void{
+  save(todo: Todo): Observable<Todo> {
+    const urlToSave = `${this.baseUrl}save`;
+    return this.http.post<Todo>(urlToSave, todo);
+  }
+
+  findById(id: any) : Observable<Todo> {
+    const urlToFind = `${this.baseUrl}${id}`;
+    return this.http.get<Todo>(urlToFind);
+  }
+
+  message(message: String): void {
     this.snack.open(`${message}`, "ok", {
       horizontalPosition: "end",
       verticalPosition: "top",
